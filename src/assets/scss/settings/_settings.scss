@@ -1,0 +1,88 @@
+@use './variables' as *;
+@use 'sass:color';
+
+*, *:before, *:after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    background-color: $color-white;
+    color: $color-black;
+}
+
+body{
+    font-family: $font;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+ul, li, ol, dl, dt, dd, form, p, img, video a, h1, h2, h3, h4, h5, h6{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-weight: $fw-sBold;
+}
+
+button:focus, video:focus, input:focus, textarea:focus, select:focus, select:focus-visible{
+    outline: none!important;
+    outline-width: 0;
+    box-shadow: none;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+
+::selection{
+    background-color: $color-orange;
+    color: $color-white;
+}
+
+:focus{
+    outline: 0!important;
+}
+
+a, label, span, ul, input, textarea, button, div, li, ol, p{
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
+}
+
+button{
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+    border: none;
+}
+
+input, select, textarea, button{
+    font-family: $font;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: 0;
+    font-size: 16px;
+}
+
+textarea{
+    resize: none;
+}
+
+svg, picture, img{
+    display: block;
+}
+
+.no-scroll{
+    overflow: hidden;
+}
+
+.hidden{
+    display: none;
+}

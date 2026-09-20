@@ -1,0 +1,11 @@
+// Settings
+@use './settings/settings';
+
+// Blocks
+@use './blocks/header';
+@use './blocks/footer';
+
+// Pages
+@use './pages/home';
+@use './pages/about';
+@use './pages/contact';
