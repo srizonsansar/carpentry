@@ -10,7 +10,7 @@ const HomePage = () => {
 
 const HomeIntro = () => {
     return(
-        <div>Home Page</div>
+        <h1>Exceptional <span>WoodWork</span> Solutions</h1>
     )
 }
 
