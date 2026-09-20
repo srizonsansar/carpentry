@@ -1,0 +1,75 @@
+@use '../settings/variables' as *;
+@use '../settings/general' as *;
+@use 'sass:color';
+
+.header{
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    background-color: $color-white;
+    transition: background-color $time-fast, color $time-fast;
+    .container{
+        @extend %container;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__logo{
+        padding: 15px 0;
+        img{
+            height: 50px;
+        }
+    }
+    &__nav{
+        display: flex;
+        gap: 32px;
+        &__item{
+            position: relative;
+            font-weight: $fw-sBold;
+            color: $color-dark;
+            text-transform: uppercase;
+            font-size: 15px;
+            padding: 8px 0;
+            transition: color $time-fast;
+            &:before{
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background-color: $color-orange;
+                transition: width $time-fast;
+            }
+            &:hover{
+                color: $color-orange;
+            }
+            &.active{
+                color: $color-orange;
+                &:before{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    &__quote{
+        background-color: $color-orange;
+        color: $color-white;
+        padding: 10px 20px;
+        font-weight: $fw-sBold;
+        font-size: 15px;
+        transition: background-color $time-fast;
+        &:hover{
+            background-color: $color-green-dark;
+        }
+    }
+    &.home-header{
+        background-color: $color-yellow-light;
+    }
+    &.scrolled{
+        box-shadow: 0 0 15px color.scale($color-black, $alpha: -90%);
+        background-color: $color-white;
+    }
+}
