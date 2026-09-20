@@ -1,12 +1,24 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { BusinessDetails } from "../BasicData";
+import { useEffect, useState } from "react";
 
 const Header = () => {
 
     const isHomePage = useLocation().pathname
-    
+
+    const [isScrolled, setIsScrolled] = useState(false)
+    useEffect( () => {
+        const scrollHeaderActive = () => {
+            setIsScrolled(window.scrollY > 100)
+        }
+        window.addEventListener('scroll', scrollHeaderActive)
+        return () => {
+            window.removeEventListener('scroll', scrollHeaderActive)
+        }
+    }, [])
+
     return(
-        <header className={`header ${isHomePage === "/" ? "home-header" : ""}`}>
+        <header className={`header ${isHomePage === "/" ? "home-header" : ""} ${isScrolled ? "scrolled" : ""}`}>
             <div className="container">
                 <Link to={"/"} className="header__logo">
                     <img src="https://projects.devnava.com/projects-media/carpentry/logo-color.png" alt={BusinessDetails.name} />

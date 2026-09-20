@@ -40,14 +40,14 @@
                 left: 0;
                 width: 0;
                 height: 2px;
-                background-color: $color-orange;
+                background-color: $color-red;
                 transition: width $time-fast;
             }
             &:hover{
-                color: $color-orange;
+                color: $color-red;
             }
             &.active{
-                color: $color-orange;
+                color: $color-red;
                 &:before{
                     width: 100%;
                 }
@@ -55,7 +55,7 @@
         }
     }
     &__quote{
-        background-color: $color-orange;
+        background-color: $color-red;
         color: $color-white;
         padding: 10px 20px;
         font-weight: $fw-sBold;
@@ -69,7 +69,7 @@
         background-color: $color-yellow-light;
     }
     &.scrolled{
-        box-shadow: 0 0 15px color.scale($color-black, $alpha: -90%);
+        box-shadow: $box-shadow;
         background-color: $color-white;
     }
 }

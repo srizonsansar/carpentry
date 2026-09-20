@@ -76,6 +76,7 @@ const Footer = () => {
                         <Link to={"/projects"} className="footer__nav__item">Projects</Link>
                         <Link to={"/blog"} className="footer__nav__item">Blog</Link>
                         <Link to={"/contact-us"} className="footer__nav__item">Contact Us</Link>
+                        <Link to={"/get-quote"} className="footer__nav__item">Get Quote</Link>
                     </div>
                 </div>
             </footer>
