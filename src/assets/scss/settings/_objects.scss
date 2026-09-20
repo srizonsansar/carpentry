@@ -1,0 +1,30 @@
+@use './variables' as *;
+@use 'sass:color';
+
+// Container
+%container{
+    width: 100%;
+    max-width: 1300px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+// Image
+%image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+// Patch
+%patch{
+    display: flex;
+    margin-bottom: 20px;
+    span{
+        border: 1px solid $color-green-dark;
+        font-weight: $fw-medium;
+        padding: 8px 24px;
+        border-radius: 999px;
+    }
+}

@@ -29,7 +29,8 @@ ul, li, ol, dl, dt, dd, form, p, img, video a, h1, h2, h3, h4, h5, h6{
 }
 
 h1, h2, h3, h4, h5, h6{
-    font-weight: $fw-sBold;
+    font-weight: $fw-regular;
+    font-family: $font-title;
 }
 
 button:focus, video:focus, input:focus, textarea:focus, select:focus, select:focus-visible{
@@ -85,6 +86,10 @@ svg, picture, img{
 
 .hidden{
     display: none;
+}
+
+.block{
+    display: block;
 }
 
 #nl-badge-frame{

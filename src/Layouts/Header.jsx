@@ -31,7 +31,7 @@ const Header = () => {
                     <NavLink to={"/blog"} className="header__nav__item">Blog</NavLink>
                     <NavLink to={"/contact-us"} className="header__nav__item">Contact Us</NavLink>
                 </div>
-                <Link to={"/get-quote"} className="header__quote">Quote Btn →</Link>
+                <Link to={"/get-quote"} className="header__quote">Quote A Quote →</Link>
             </div>
         </header>
     )

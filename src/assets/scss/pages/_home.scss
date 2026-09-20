@@ -1,5 +1,5 @@
 @use '../settings/variables' as *;
-@use '../settings/general' as *;
+@use '../settings/objects' as *;
 @use 'sass:color';
 
 // Home Intro
@@ -23,13 +23,13 @@
         font-size: 14px;
         padding: 7px 20px;
         border-radius: 999px;
-        margin-bottom: 20px;
+        margin-bottom: 32px;
     }
     h1{
-        font-size: 64px;
+        font-size: 72px;
         text-transform: uppercase;
-        line-height: 1.3;
-        padding-bottom: 48px; 
+        line-height: 1.1;
+        padding-bottom: 36px; 
         span{
             display: block;
             color: $color-red;
@@ -74,6 +74,128 @@
 // About Text Block on Home Page
 .aboutHome{
     scroll-margin-top: 90px;
-    text-align: center;
-    padding: 80px 0;
+    padding: 100px 0;
+    .container{
+        @extend %container;
+    }
+    .patch{
+        @extend %patch;
+        justify-content: center;
+    }
+    &__title{
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 44px;
+        padding: 10px 0 40px;
+    }
+    .blocks{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        &__item{
+            .blockImage{
+                position: relative;
+                border-radius: 15px;
+                overflow: hidden;
+                height: 100%;
+                display: flex;
+                align-items: flex-end;
+                &__pic{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    &__img{
+                        @extend %image;
+                    }
+                }
+                &__text{
+                    position: relative;
+                    background-color: $color-white;
+                    margin: 0 25px 25px;
+                    border-radius: 10px;
+                    padding: 25px;
+                    &__num{
+                        font-size: 48px;
+                        padding-bottom: 4px;
+                    }
+                    p{
+                        font-size: 18px;
+                        line-height: 1.5;
+                    }
+                }
+            }
+            .blockTexts{
+                background-color: $color-yellow-light;
+                border-radius: 15px;
+                padding: 25px;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                &__top{
+                    &__num{
+                        font-size: 48px;
+                        padding-top: 4px;
+                    }
+                    p{
+                        font-size: 18px;
+                        line-height: 1.5;
+                    }
+                }
+                &__bot{
+                    &__images{
+                        display: flex;
+                        padding: 0 0 20px 15px;
+                        &__img{
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            margin-left: -15px;
+                            border: 1px solid $color-white;
+                        }
+                    }
+                    &__text{
+                        font-size: 18px;
+                        line-height: 1.5;
+                    }
+                }
+            }
+            .blocksColors{
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                color: $color-white;
+                &__top{
+                    background-color: $color-green-dark;
+                    border-radius: 15px;
+                    padding: 25px;
+                    &__text{
+                        font-size: 18px;
+                    }
+                    &__num{
+                        font-size: 48px;
+                        padding-bottom: 32px;
+                    }
+                }
+                &__bot{
+                    background-color: $color-red;
+                    border-radius: 15px;
+                    padding: 15px 25px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    &__text{
+                        font-size: 18px;
+                        line-height: 1.5;
+                    }
+                    &__num{
+                        font-size: 48px;
+                        padding-top: 5px;
+                    }
+                }
+            }
+        }
+    }
 }

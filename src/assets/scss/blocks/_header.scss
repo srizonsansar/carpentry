@@ -1,5 +1,5 @@
 @use '../settings/variables' as *;
-@use '../settings/general' as *;
+@use '../settings/objects' as *;
 @use 'sass:color';
 
 .header{
@@ -25,12 +25,12 @@
     &__nav{
         display: flex;
         gap: 32px;
+        font-family: $font-title;
         &__item{
             position: relative;
-            font-weight: $fw-sBold;
             color: $color-dark;
             text-transform: uppercase;
-            font-size: 15px;
+            font-size: 20px;
             padding: 8px 0;
             transition: color $time-fast;
             &:before{
