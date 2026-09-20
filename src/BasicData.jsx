@@ -19,3 +19,22 @@ export const SocialMedia = [
         link: "https://www.youtube.com/"
     },
 ]
+
+export const TrustPoints = [
+    {
+        title: "Sustainable Forestry",
+        text: "Healthy eating significantly boosts overall health and well-being for healthier living."
+    },
+    {
+        title: "Quality Control",
+        text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel quod nam iusto."
+    },
+    {
+        title: "Expert Team",
+        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat eveniet impedit reprehenderit!"
+    },
+    {
+        title: "Custom Processing",
+        text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione vel perspiciatis numquam!"
+    },
+]

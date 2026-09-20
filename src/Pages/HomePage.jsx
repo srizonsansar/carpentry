@@ -1,4 +1,6 @@
-import { BusinessDetails } from "../BasicData";
+import { Link } from "react-router-dom";
+import { BusinessDetails, TrustPoints } from "../BasicData";
+import { useState } from "react";
 
 const HomePage = () => {
     return (
@@ -7,6 +9,10 @@ const HomePage = () => {
             <HomeIntro />
 
             <AboutInHome />
+
+            <TrustBlock />
+
+            <SVCListHome />
 
         </>
     )
@@ -94,6 +100,73 @@ const AboutInHome = () => {
                 </div>
             </div>
         </div>
+    )
+}
+
+const TrustBlock = () => {
+
+    const [openItems, setOpenItems] = useState([0])
+    const handleToggle = (index) => {
+        setOpenItems( (prev) => {
+            if(prev.includes(index)){
+                return prev.filter(item => item !== index)
+            } else {
+                return [...prev, index]
+            }
+        })
+    }
+
+    return(
+        <section className="trustBlock">
+            <div className="container">
+                <div className="trustBlock__left">
+                    <div className="trustBlock__left__picBlock">
+                        <img src="https://projects.devnava.com/projects-media/carpentry/8.jpg" alt={BusinessDetails.name} className="trustBlock__left__picBlock__img" />
+                        <div className="trustBlock__left__picBlock__patch">SINCE <span>1998</span></div>
+                    </div>
+                    <div className="trustBlock__left__trustPoints">
+                        <div className="trustPoints">
+                            {TrustPoints.map( (item, index) => (
+                                <div key={index} className={`trustPoints__item ${openItems.includes(index) ? "open" : ""}`}>
+                                    <div className="titleBlock" onClick={() => handleToggle(index)}>
+                                        <h3>{item.title}</h3>
+                                        <span>{`${openItems.includes(index) ? "-" : "+"}`}</span>
+                                    </div>
+                                    <div className="text">
+                                        <p>{item.text}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+                <div className="trustBlock__right">
+                    <div className="trustBlock__right__content">
+                        <div className="patch">
+                            <span>Why trust {BusinessDetails.name}</span>
+                        </div>
+                        <h2>Premium Carpentry Crafted with Skill, Quality and Care</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, mollitia. Temporibus alias, tenetur dolor delectus odit, reprehenderit laudantium necessitatibus earum quibusdam sint inventore veniam!</p>
+                    </div>
+                    <div className="trustBlock__right__picBlock">
+                        <img src="https://projects.devnava.com/projects-media/carpentry/5.jpg" alt={BusinessDetails.name} className="trustBlock__right__picBlock__img" />
+                        <div className="trustBlock__right__picBlock__content">
+                            <h2>Need Expert Carpentry?</h2>
+                            <p>From custom furniture to complete interiors, we craft every detail with precision.</p>
+                            <div className="btn">
+                                <Link to={"/get-quote"}>Get free quote</Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
+}
+
+const SVCListHome = () => {
+    return(
+        <section className="svcListHome">Services List on Home Page</section>
     )
 }
 

@@ -28,3 +28,21 @@
         border-radius: 999px;
     }
 }
+
+// Button
+%button{
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: $fw-medium;
+    transition: background-color $time-fast, color $time-fast;
+}
+%button-red{
+    background-color: $color-red;
+    color: $color-white;
+}
+%button-white{
+    background-color: $color-white;
+    color: $color-red;
+}
