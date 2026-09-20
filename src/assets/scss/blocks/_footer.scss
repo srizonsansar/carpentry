@@ -1,0 +1,208 @@
+@use '../settings/variables' as *;
+@use '../settings/general' as *;
+@use 'sass:color';
+
+// Footer
+.footer{
+    background-color: $color-green-dark;
+    color: $color-white;
+    .container{
+        @extend %container;
+        display: flex;
+        gap: 0 40px;
+    }
+    &__left{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        &__top{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 40px;
+            .contactFooter{
+                display: flex;
+                justify-content: space-between;
+                &__item{
+                    display: flex;
+                    flex-direction: column;
+                    .text{
+                        opacity: .75;
+                        padding-bottom: 10px;
+                    }
+                    .data{
+                        font-size: 20px;
+                        font-weight: $fw-sBold;
+                        a{
+                            color: $color-white;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+            .footerData{
+                display: flex;
+                align-items: center;
+                gap: 40px;
+                &__pic{
+                    position: relative;
+                    width: 40%;
+                    height: 180px;
+                    border-radius: 20px;
+                    overflow: hidden;
+                    &__img{
+                        @extend %image;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
+                }
+                &__content{
+                    flex: 1;
+                    h2{
+                        font-size: 28px;
+                    }
+                    p{
+                        padding-top: 12px;
+                        font-size: 15px;
+                        line-height: 1.7;
+                    }
+                }
+            }
+        }
+        &__bottom{
+            height: 80px;
+            border-top: 1px solid color.scale($color-white, $alpha: -60%);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            p{
+                font-size: 14px;
+                font-weight: $fw-medium;
+                display: flex;
+                gap: 10px;
+                .popupBtn{
+                    cursor: pointer;
+                    transition: color $time-fast;
+                    &:hover{
+                        color: $color-yellow-dark;
+                    }
+                }
+            }
+            ul{
+                display: flex;
+                gap: 8px;
+                li{
+                    a{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 18px;
+                        color: $color-white;
+                        font-weight: $fw-sBold;
+                        width: 44px;
+                        height: 44px;
+                        border-radius: 50%;
+                        background-color: color.scale($color-white, $alpha: -80%);
+                        transition: background-color $time-fast;
+                        &:hover{
+                            background-color: $color-orange;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__nav{
+        width: 240px;
+        &__item{
+            color: $color-white;
+            font-weight: $fw-medium;
+            border-top: 1px solid color.scale($color-white, $alpha: -60%);
+            border-right: 1px solid color.scale($color-white, $alpha: -60%);
+            border-left: 1px solid color.scale($color-white, $alpha: -60%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 80px;
+            font-size: 15px;
+            text-transform: uppercase;
+            transition: background-color $time-fast, color $time-fast;
+            &:nth-child(1){
+                border-top: none;
+            }
+            &:hover{
+                background-color: $color-orange;
+            }
+        }
+    }
+}
+
+// Legal Popup
+.legalPopup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 15;
+    width: 100%;
+    height: 100%;
+    padding: 50px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity $time-fast;
+    &.visible{
+        pointer-events: all;
+        opacity: 1;
+    }
+    &__overlay{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: color.scale($color-black, $alpha: -25%);
+    }
+    &__content{
+        position: relative;
+        background-color: $color-white;
+        padding: 40px;
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        overflow-y: auto;
+        .close{
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: $color-orange;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $color-white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color $time-fast;
+            &:hover{
+                background-color: $color-danger;
+            }
+        }
+        h2{
+            font-size: 32px;
+            padding-bottom: 16px;
+        }
+        h3{
+            font-size: 24px;
+            padding-bottom: 12px;
+        }
+        p{
+            padding-bottom: 16px;
+            line-height: 1.6;
+            &:last-child{
+                padding-bottom: 0;
+            }
+        }
+    }
+}

@@ -4,3 +4,18 @@ export const BusinessDetails = {
     email: "write.nrs@gmail.com",
     address: "Amadora, Lisbon, Portugal"
 }
+
+export const SocialMedia = [
+    {
+        word: "F",
+        link: "https://www.facebook.com/"
+    },
+    {
+        word: "I",
+        link: "https://www.instagram.com/"
+    },
+    {
+        word: "Y",
+        link: "https://www.youtube.com/"
+    },
+]
