@@ -38,3 +38,24 @@ export const TrustPoints = [
         text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione vel perspiciatis numquam!"
     },
 ]
+
+export const WhyUsPoints = [
+    {
+        id: 1,
+        title: "Expert Craftsmanship",
+        text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi, suscipit.",
+    },
+    {
+        id: 2,
+        title: "Premium Materials",
+        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, quae!",
+    },{
+        id: 3,
+        title: "Custom Solutions",
+        text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque, modi.",
+    },{
+        id: 4,
+        title: "On-Time Delivery",
+        text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta, aspernatur.",
+    },
+]

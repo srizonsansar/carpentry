@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { BusinessDetails, TrustPoints } from "../BasicData";
+import { BusinessDetails, TrustPoints, WhyUsPoints } from "../BasicData";
 import { useState } from "react";
 
 const HomePage = () => {
@@ -13,6 +13,8 @@ const HomePage = () => {
             <TrustBlock />
 
             <SVCListHome />
+
+            <WhyChooseUs />
 
         </>
     )
@@ -165,8 +167,44 @@ const TrustBlock = () => {
 }
 
 const SVCListHome = () => {
+    const items = Array.from({ length: 10 });
+    const marqueeItems = items.map((_, i) => (
+        <span key={i}>Services</span>
+    ));
+    return (
+        <section className="svcListHome">
+            <div className="svcListHome__marquee">
+                <div className="svcListHome__track">
+                    {marqueeItems}
+                    {marqueeItems}
+                </div>
+            </div>
+        </section>
+    );
+};
+
+const WhyChooseUs = () => {
     return(
-        <section className="svcListHome">Services List on Home Page</section>
+        <section className="whyChooseUs">
+            <picture className="whyChooseUs__pic">
+                <img src="https://projects.devnava.com/projects-media/carpentry/8.jpg" alt={BusinessDetails.name} className="whyChooseUs__pic__img" />
+            </picture>
+            <div className="whyChooseUs__textBlock">
+                <div className="patch">
+                    <span>Why Choose Us</span>
+                </div>
+                <h2>Exceptional craftsmanship designed for modern living spaces</h2>
+                <ul>
+                    {WhyUsPoints.map( (point) => (
+                        <li key={point.id}>
+                           <div className="num">{point.id}</div>
+                           <h3>{point.title}</h3>
+                           <p>{point.text}</p>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </section>
     )
 }
 

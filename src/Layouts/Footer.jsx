@@ -85,6 +85,8 @@ const Footer = () => {
 
             <LegalMentions showPopup={showPopup} setShowPopup={setShowPopup} />
 
+            <CookiesPopup />
+
         </>
     )
 }
@@ -116,6 +118,18 @@ const LegalMentions = ({showPopup, setShowPopup}) => {
                 <h3>Lorem ipsum dolor sit.</h3>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas sed aut illo quaerat commodi ullam quam blanditiis. Facilis voluptatibus corrupti voluptatem. Unde, quia illo.</p>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe aliquam soluta libero minus laudantium. Ullam quo ex omnis facilis reprehenderit.</p>
+            </div>
+        </div>
+    )
+}
+
+const CookiesPopup = () => {
+    return(
+        <div className="cookiesBox">
+            <p>This website uses cookies (also third-party cookies) to provide you a better navigation experience. By closing this banner, scrolling this page or by clicking any of its elements, you agree to the use of cookies.</p>
+            <div className="cookiesBox__btns">
+                <span className="cookiesBox__btns__link">Close</span>
+                <span className="cookiesBox__btns__link">More Information</span>
             </div>
         </div>
     )

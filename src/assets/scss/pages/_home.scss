@@ -365,11 +365,103 @@
 }
 
 // SVC List on Home Page
-.svcListHome{
+.svcListHome {
     background-color: $color-green-dark;
     text-align: center;
     color: $color-white;
     font-size: 20px;
     font-weight: $fw-medium;
-    padding: 100px 0;
+    padding: 60px 0 100px;
+    overflow: hidden;
+
+    &__marquee {
+        display: flex;
+        width: max-content;
+        animation: svcMarquee 100s linear infinite;
+
+        // Pause on hover
+        &:hover {
+            animation-play-state: paused;
+        }
+
+        span {
+            font-family: $font-title;
+            font-size: 200px;
+            margin: 0 50px;
+            white-space: nowrap;
+
+            &:nth-child(2n+2) {
+                opacity: .2;
+            }
+        }
+    }
+}
+
+@keyframes svcMarquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        // Move by half the total width (since we duplicate the content)
+        transform: translateX(-50%);
+    }
+}
+
+// Why Choose Us Block
+.whyChooseUs{
+    display: flex;
+    &__pic{
+        position: relative;
+        width: 50%;
+        &__img{
+            @extend %image;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+    &__textBlock{
+        background-color: $color-red;
+        padding: 100px;
+        width: 50%;
+        color: $color-white;
+        .patch{
+            @extend %patch;
+            span{
+                border-color: $color-white;
+            }
+        }
+        h2{
+            font-size: 48px;
+            padding-bottom: 40px;
+        }
+        ul{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px 80px;
+            li{
+                .num{
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    border: 1px solid $color-yellow-light3;
+                    font-size: 20px;
+                    font-weight: $fw-sBold;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-bottom: 20px;
+                }
+                h3{
+                    font-size: 24px;
+                    padding-bottom: 3px;
+                }
+                p{
+                    font-size: 17px;
+                    font-weight: $fw-medium;
+                    line-height: 1.6;
+                }
+            }
+        }
+    }
 }

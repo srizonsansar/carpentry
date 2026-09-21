@@ -206,3 +206,42 @@
         }
     }
 }
+
+// Cookies Box
+.cookiesBox{
+    position: fixed;
+    bottom: 20px;
+    left: calc(50% - 400px);
+    z-index: 5;
+    width: 800px;
+    background-color: $color-white;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: $fw-medium;
+    box-shadow: $box-shadow;
+    p{
+        line-height: 1.5;
+        padding-bottom: 15px;
+    }
+    &__btns{
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        &__link{
+            background-color: $color-dark;
+            color: $color-white;
+            padding: 6px 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color $time-fast;
+            &:nth-child(2){
+                background-color: $color-green-dark;
+            }
+            &:hover{
+                background-color: $color-red;
+            }
+        }
+    }
+}
